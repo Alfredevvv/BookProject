@@ -11,7 +11,7 @@ export class BookService {
   constructor(private http: HttpClient) { }
 
   getAllBooks(): Observable<Book[]>{
-      return this.http.get("https://openlibrary.org/search.json?title=the+lord+of+the+rings&fields=title,subtitle,author_name,first_publish_year,type,number_of_pages_median")
+      return this.http.get("https://openlibrary.org/search.json?&fields=title,subtitle,author_name,first_publish_year,type,number_of_pages_median")
       .pipe(map((res: any) => {
           return res.docs.map((book: any) => ({title: book.title, author: book.author_name, first_publish_year: book.first_publish_year, pages: book.number_of_pages_median}))
       }));
@@ -26,7 +26,7 @@ export class BookService {
     //if (params.subject)
       //httpParams = httpParams.append('subject', params.subject);
 
-    return this.http.get("https://openlibrary.org/search.json?title=the+lord+of+the+rings&fields=title,subtitle,author_name,first_publish_year,type,number_of_pages_median", {params: httpParams})
+    return this.http.get("https://openlibrary.org/search.json?&fields=title,subtitle,author_name,first_publish_year,type,number_of_pages_median", {params: httpParams})
     .pipe(map((res: any) => {
         return res.docs.map((book: any) =>
         ({title: book.title, author: book.author_name, 
