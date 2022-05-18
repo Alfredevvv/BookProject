@@ -1,0 +1,17 @@
+
+
+<table>
+    <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Author</th>
+        <th scope="col">Pages</th>
+        <th scope="col">First Publish Year</th>
+    </tr>
+
+    <tr *ngFor="let row of books">
+        <td>{{row.title}}</td>
+        <td>{{row.author}}</td>
+        <td>{{row.pages}}</td>
+        <td>{{row.first_publish_year}}</td>
+    </tr>
+</table>

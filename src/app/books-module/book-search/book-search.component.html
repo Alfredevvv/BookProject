@@ -1,0 +1,14 @@
+<h1>{{title}}</h1>
+
+<form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+    <label for="titlelabel">Title</label>
+    <input type="text" placeholder="Enter Book's title" formControlName="title">
+    <br>
+    <label for="authorlabel">Author</label>
+    <input type="text" placeholder="Enter Author name" formControlName="author">
+    <br><br>
+    <button type="submit">Boton</button>
+    <br>
+</form>
+
+<app-book-list [books]="records"></app-book-list>
